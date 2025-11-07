@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>Icons/random.png</file>
+    <file>Icons/add_photo_alternate_rounded.png</file>
+    <file>Icons/Add icon.png</file>
+    <file>Icons/books.png</file>
+    <file>Icons/comics.png</file>
+    <file>Icons/games.png</file>
+    <file>Icons/home.png</file>
+    <file>Icons/movies.png</file>
+    <file>Icons/settings.png</file>
+  </qresource>
+  <qresource prefix="fonts"/>
+  <qresource prefix="images"/>
+</RCC>

@@ -1,0 +1,2338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_widget</class>
+ <widget class="QWidget" name="main_widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1270</width>
+    <height>753</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWidget" name="side_widget" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget{background-color:
+rgb(0, 0, 0);}</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="home_button">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton:checked {
+    background-color: rgb(83, 83, 83);}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="My libirary Project/data/resources.qrc">
+            <normaloff>:/icons/Icons/home.png</normaloff>:/icons/Icons/home.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="movies_button">
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton:checked {
+    background-color: rgb(83, 83, 83);}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="My libirary Project/data/resources.qrc">
+            <normaloff>:/icons/Icons/movies.png</normaloff>:/icons/Icons/movies.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="games_button">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton:checked {
+    background-color: rgb(83, 83, 83);}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="My libirary Project/data/resources.qrc">
+            <normaloff>:/icons/Icons/games.png</normaloff>:/icons/Icons/games.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="books_button">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton:checked {
+    background-color: rgb(83, 83, 83);}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="My libirary Project/data/resources.qrc">
+            <normaloff>:/icons/Icons/books.png</normaloff>:/icons/Icons/books.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="comics_button">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton:checked {
+    background-color: rgb(83, 83, 83);}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="My libirary Project/data/resources.qrc">
+            <normaloff>:/icons/Icons/comics.png</normaloff>:/icons/Icons/comics.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="setting_button">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton:checked {
+    background-color: rgb(83, 83, 83);}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="My libirary Project/data/resources.qrc">
+            <normaloff>:/icons/Icons/settings.png</normaloff>:/icons/Icons/settings.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QWidget" name="main_body_widget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QStackedWidget" name="stacked_body_Widget">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QStackedWidget {
+    background-color: rgb(128, 128, 128);
+}
+</string>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="welcome_section">
+         <property name="styleSheet">
+          <string notr="true">QWidget {
+    background-color: rgb(200, 200, 200);
+}
+</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>This app is designed to be your perfect library for (movies, series, games, etc.)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>10</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="1">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <family>Arial Rounded MT</family>
+              <pointsize>36</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Welcome, to your libirary</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::TextFormat::RichText</enum>
+            </property>
+            <property name="scaledContents">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="movies_section">
+         <property name="styleSheet">
+          <string notr="true">QWidget {
+    background-color: rgb(200, 200, 200);
+}
+</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="movies_label">
+                <property name="font">
+                 <font>
+                  <family>Arial Rounded MT</family>
+                  <pointsize>36</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string> Movies</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="movies_add_botton">
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>50</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>Add a new movie</string>
+                </property>
+                <property name="statusTip">
+                 <string>Add a new movie</string>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="text">
+                 <string extracomment="Add a movie"/>
+                </property>
+                <property name="icon">
+                 <iconset resource="My libirary Project/data/resources.qrc">
+                  <normaloff>:/icons/Icons/Add icon.png</normaloff>:/icons/Icons/Add icon.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>60</width>
+                  <height>60</height>
+                 </size>
+                </property>
+                <property name="shortcut">
+                 <string>+</string>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTabWidget" name="movies_tap_widget">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="contextMenuPolicy">
+               <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+              </property>
+              <property name="layoutDirection">
+               <enum>Qt::LayoutDirection::LeftToRight</enum>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QTabWidget::pane {
+    border: none;
+    background: #f0f0f0;  /* light clean background */
+}
+
+QTabBar {
+    qproperty-drawBase: 0;
+    alignment: center;  /* center the tabs */
+}
+
+QTabBar::tab {
+    background: transparent;
+    color: #444;
+    padding: 10px 25px;
+    margin: 0px 5px;
+    font: 13pt &quot;Segoe UI&quot;;
+    border-bottom: 3px solid transparent;
+}
+
+QTabBar::tab:selected {
+    color: #0078d7;  /* accent blue */
+    border-bottom: 3px solid #0078d7;
+}
+
+QTabBar::tab:hover {
+    color: #005a9e;
+}
+</string>
+              </property>
+              <property name="tabPosition">
+               <enum>QTabWidget::TabPosition::North</enum>
+              </property>
+              <property name="tabShape">
+               <enum>QTabWidget::TabShape::Rounded</enum>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <property name="elideMode">
+               <enum>Qt::TextElideMode::ElideNone</enum>
+              </property>
+              <property name="documentMode">
+               <bool>true</bool>
+              </property>
+              <property name="tabsClosable">
+               <bool>false</bool>
+              </property>
+              <property name="movable">
+               <bool>false</bool>
+              </property>
+              <property name="tabBarAutoHide">
+               <bool>false</bool>
+              </property>
+              <widget class="QWidget" name="movies_watching">
+               <attribute name="title">
+                <string>       Watching        </string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_13">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <layout class="QVBoxLayout" name="verticalLayout_8">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>10</number>
+                  </property>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_5">
+                    <property name="spacing">
+                     <number>5</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>10</number>
+                    </property>
+                    <item>
+                     <widget class="QLineEdit" name="watching_search">
+                      <property name="maximumSize">
+                       <size>
+                        <width>200</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    background-color: transparent;
+    padding: 6px;
+    border: none;
+    border-bottom: 1px solid rgba(221, 221, 221, 100); /* قبل التركيز */
+}
+
+QLineEdit:hover {
+    background-color: rgba(73, 133, 224, 0.12); /* زي input-hovered-color */
+}
+
+QLineEdit:focus {
+    outline: none;
+    border-bottom: 2px solid #5891ff; /* بعد التركيز */
+}
+</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Search (Name or Year)</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="Line" name="line_2">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="watching_random_button">
+                      <property name="autoFillBackground">
+                       <bool>false</bool>
+                      </property>
+                      <property name="text">
+                       <string>Choose One</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="My libirary Project/data/resources.qrc">
+                        <normaloff>:/icons/Icons/random.png</normaloff>:/icons/Icons/random.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>50</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_2">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Policy::Expanding</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="Line" name="line">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QComboBox" name="wahtching_sort_box">
+                      <property name="placeholderText">
+                       <string>Sort by</string>
+                      </property>
+                      <property name="frame">
+                       <bool>false</bool>
+                      </property>
+                      <property name="labelDrawingMode">
+                       <enum>QComboBox::LabelDrawingMode::UseStyle</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QListWidget" name="watching_list"/>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="movies_want_to_watch">
+               <attribute name="title">
+                <string>  Want To Watch </string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_12">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <layout class="QVBoxLayout" name="verticalLayout_10">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>10</number>
+                  </property>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_8">
+                    <property name="spacing">
+                     <number>5</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>10</number>
+                    </property>
+                    <item>
+                     <widget class="QLineEdit" name="want_to_watch_search">
+                      <property name="maximumSize">
+                       <size>
+                        <width>200</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    background-color: transparent;
+    padding: 6px;
+    border: none;
+    border-bottom: 1px solid rgba(221, 221, 221, 100); /* قبل التركيز */
+}
+
+QLineEdit:hover {
+    background-color: rgba(73, 133, 224, 0.12); /* زي input-hovered-color */
+}
+
+QLineEdit:focus {
+    outline: none;
+    border-bottom: 2px solid #5891ff; /* بعد التركيز */
+}
+</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Search (Name or Year)</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="Line" name="line_5">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="want_to_watch_random_button">
+                      <property name="autoFillBackground">
+                       <bool>false</bool>
+                      </property>
+                      <property name="text">
+                       <string>Choose One</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="My libirary Project/data/resources.qrc">
+                        <normaloff>:/icons/Icons/random.png</normaloff>:/icons/Icons/random.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>50</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_5">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Policy::Expanding</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="Line" name="line_6">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QComboBox" name="want_to_watch_sort_by">
+                      <property name="placeholderText">
+                       <string>Sort by</string>
+                      </property>
+                      <property name="frame">
+                       <bool>false</bool>
+                      </property>
+                      <property name="labelDrawingMode">
+                       <enum>QComboBox::LabelDrawingMode::UseStyle</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QListWidget" name="want_to_watch_list"/>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="movies_continue_later">
+               <attribute name="title">
+                <string>    Continue Later   </string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_9">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>9</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <layout class="QVBoxLayout" name="verticalLayout_11">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>10</number>
+                  </property>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                    <property name="spacing">
+                     <number>5</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>10</number>
+                    </property>
+                    <item>
+                     <widget class="QLineEdit" name="continue_later_search">
+                      <property name="maximumSize">
+                       <size>
+                        <width>200</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    background-color: transparent;
+    padding: 6px;
+    border: none;
+    border-bottom: 1px solid rgba(221, 221, 221, 100); /* قبل التركيز */
+}
+
+QLineEdit:hover {
+    background-color: rgba(73, 133, 224, 0.12); /* زي input-hovered-color */
+}
+
+QLineEdit:focus {
+    outline: none;
+    border-bottom: 2px solid #5891ff; /* بعد التركيز */
+}
+</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Search (Name or Year)</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="Line" name="line_7">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="continue_later_random_button">
+                      <property name="autoFillBackground">
+                       <bool>false</bool>
+                      </property>
+                      <property name="text">
+                       <string>Choose One</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="My libirary Project/data/resources.qrc">
+                        <normaloff>:/icons/Icons/random.png</normaloff>:/icons/Icons/random.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>50</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_6">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Policy::Expanding</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="Line" name="line_8">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QComboBox" name="continue_later_sort_by">
+                      <property name="placeholderText">
+                       <string>Sort by</string>
+                      </property>
+                      <property name="frame">
+                       <bool>false</bool>
+                      </property>
+                      <property name="labelDrawingMode">
+                       <enum>QComboBox::LabelDrawingMode::UseStyle</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QListWidget" name="continue_later_list"/>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="movies_dont_want_to_watch">
+               <attribute name="title">
+                <string>    Dont Wnat To Continue </string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_10">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <layout class="QVBoxLayout" name="verticalLayout_12">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>10</number>
+                  </property>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_10">
+                    <property name="spacing">
+                     <number>5</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>10</number>
+                    </property>
+                    <item>
+                     <widget class="QLineEdit" name="dont_want_to_continue_search">
+                      <property name="maximumSize">
+                       <size>
+                        <width>200</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    background-color: transparent;
+    padding: 6px;
+    border: none;
+    border-bottom: 1px solid rgba(221, 221, 221, 100); /* قبل التركيز */
+}
+
+QLineEdit:hover {
+    background-color: rgba(73, 133, 224, 0.12); /* زي input-hovered-color */
+}
+
+QLineEdit:focus {
+    outline: none;
+    border-bottom: 2px solid #5891ff; /* بعد التركيز */
+}
+</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Search (Name or Year)</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="Line" name="line_9">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="dont_want_to_continue_random_button">
+                      <property name="autoFillBackground">
+                       <bool>false</bool>
+                      </property>
+                      <property name="text">
+                       <string>Choose One</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="My libirary Project/data/resources.qrc">
+                        <normaloff>:/icons/Icons/random.png</normaloff>:/icons/Icons/random.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>50</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_7">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Policy::Expanding</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="Line" name="line_10">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QComboBox" name="dont_want_to_continue_sort_by">
+                      <property name="placeholderText">
+                       <string>Sort by</string>
+                      </property>
+                      <property name="frame">
+                       <bool>false</bool>
+                      </property>
+                      <property name="labelDrawingMode">
+                       <enum>QComboBox::LabelDrawingMode::UseStyle</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QListWidget" name="dont_want_to_continue_list"/>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="movies_ended">
+               <attribute name="title">
+                <string>       Watched        </string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_11">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <layout class="QVBoxLayout" name="verticalLayout_13">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>10</number>
+                  </property>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_11">
+                    <property name="spacing">
+                     <number>5</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>10</number>
+                    </property>
+                    <item>
+                     <widget class="QLineEdit" name="watched_search">
+                      <property name="maximumSize">
+                       <size>
+                        <width>200</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    background-color: transparent;
+    padding: 6px;
+    border: none;
+    border-bottom: 1px solid rgba(221, 221, 221, 100); /* قبل التركيز */
+}
+
+QLineEdit:hover {
+    background-color: rgba(73, 133, 224, 0.12); /* زي input-hovered-color */
+}
+
+QLineEdit:focus {
+    outline: none;
+    border-bottom: 2px solid #5891ff; /* بعد التركيز */
+}
+</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                      <property name="placeholderText">
+                       <string>Search (Name or Year)</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="Line" name="line_11">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="watched_random_button">
+                      <property name="autoFillBackground">
+                       <bool>false</bool>
+                      </property>
+                      <property name="text">
+                       <string>Choose One</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="My libirary Project/data/resources.qrc">
+                        <normaloff>:/icons/Icons/random.png</normaloff>:/icons/Icons/random.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>50</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_8">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Policy::Expanding</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="Line" name="line_12">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QComboBox" name="watched_sort_by">
+                      <property name="placeholderText">
+                       <string>Sort by</string>
+                      </property>
+                      <property name="frame">
+                       <bool>false</bool>
+                      </property>
+                      <property name="labelDrawingMode">
+                       <enum>QComboBox::LabelDrawingMode::UseStyle</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QListWidget" name="watched_list"/>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="games_section">
+         <property name="styleSheet">
+          <string notr="true">QWidget {
+    background-color: rgb(200, 200, 200);
+}
+</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <property name="spacing">
+             <number>820</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="font">
+               <font>
+                <family>Arial Rounded MT</family>
+                <pointsize>36</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Games</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_8">
+              <property name="toolTip">
+               <string>Add a new movie or serie</string>
+              </property>
+              <property name="statusTip">
+               <string>Add a new movie or serie</string>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="My libirary Project/data/resources.qrc">
+                <normaloff>:/icons/Icons/Add icon.png</normaloff>:/icons/Icons/Add icon.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>60</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <widget class="QTabWidget" name="movies_tab_Widget_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="contextMenuPolicy">
+             <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LayoutDirection::LeftToRight</enum>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QTabWidget::pane {
+    border: none;
+    background: #f0f0f0;  /* light clean background */
+}
+
+QTabBar {
+    qproperty-drawBase: 0;
+    alignment: center;  /* center the tabs */
+}
+
+QTabBar::tab {
+    background: transparent;
+    color: #444;
+    padding: 10px 25px;
+    margin: 0px 5px;
+    font: 13pt &quot;Segoe UI&quot;;
+    border-bottom: 3px solid transparent;
+}
+
+QTabBar::tab:selected {
+    color: #0078d7;  /* accent blue */
+    border-bottom: 3px solid #0078d7;
+}
+
+QTabBar::tab:hover {
+    color: #005a9e;
+}
+</string>
+            </property>
+            <property name="tabPosition">
+             <enum>QTabWidget::TabPosition::North</enum>
+            </property>
+            <property name="tabShape">
+             <enum>QTabWidget::TabShape::Rounded</enum>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <property name="elideMode">
+             <enum>Qt::TextElideMode::ElideNone</enum>
+            </property>
+            <property name="tabsClosable">
+             <bool>false</bool>
+            </property>
+            <property name="movable">
+             <bool>false</bool>
+            </property>
+            <property name="tabBarAutoHide">
+             <bool>false</bool>
+            </property>
+            <widget class="QWidget" name="games_playing">
+             <attribute name="title">
+              <string>       Playing        </string>
+             </attribute>
+             <widget class="QScrollArea" name="scrollArea_5">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_6">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_6">
+                <property name="geometry">
+                 <rect>
+                  <x>-10</x>
+                  <y>0</y>
+                  <width>1211</width>
+                  <height>741</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="games_grid_1"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="playing_want_to_play">
+             <attribute name="title">
+              <string>  Want to play  </string>
+             </attribute>
+             <widget class="QScrollArea" name="want_to_do_scrollArea_2">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_7">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_7">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1201</width>
+                  <height>741</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="games_grid_2"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="games_continue_later">
+             <attribute name="title">
+              <string>    Continue Later   </string>
+             </attribute>
+             <widget class="QScrollArea" name="scrollArea_6">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_8">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_8">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1201</width>
+                  <height>741</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="games_grid_3"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="playing_dont_want_to_play">
+             <attribute name="title">
+              <string>    Dont wnat to play </string>
+             </attribute>
+             <widget class="QScrollArea" name="scrollArea_7">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_9">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_9">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1211</width>
+                  <height>731</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="games_grid_4"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="playing_ended">
+             <attribute name="title">
+              <string>       ended        </string>
+             </attribute>
+             <widget class="QScrollArea" name="scrollArea_8">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_10">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_10">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1201</width>
+                  <height>741</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="games_grid_5"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="books_section">
+         <property name="styleSheet">
+          <string notr="true">QWidget {
+    background-color: rgb(200, 200, 200);
+}
+</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <property name="spacing">
+             <number>870</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="font">
+               <font>
+                <family>Arial Rounded MT</family>
+                <pointsize>36</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Books</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_9">
+              <property name="toolTip">
+               <string>Add a new movie or serie</string>
+              </property>
+              <property name="statusTip">
+               <string>Add a new movie or serie</string>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="My libirary Project/data/resources.qrc">
+                <normaloff>:/icons/Icons/Add icon.png</normaloff>:/icons/Icons/Add icon.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>60</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <widget class="QTabWidget" name="movies_tab_Widget_3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="contextMenuPolicy">
+             <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LayoutDirection::LeftToRight</enum>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QTabWidget::pane {
+    border: none;
+    background: #f0f0f0;  /* light clean background */
+}
+
+QTabBar {
+    qproperty-drawBase: 0;
+    alignment: center;  /* center the tabs */
+}
+
+QTabBar::tab {
+    background: transparent;
+    color: #444;
+    padding: 10px 25px;
+    margin: 0px 5px;
+    font: 13pt &quot;Segoe UI&quot;;
+    border-bottom: 3px solid transparent;
+}
+
+QTabBar::tab:selected {
+    color: #0078d7;  /* accent blue */
+    border-bottom: 3px solid #0078d7;
+}
+
+QTabBar::tab:hover {
+    color: #005a9e;
+}
+</string>
+            </property>
+            <property name="tabPosition">
+             <enum>QTabWidget::TabPosition::North</enum>
+            </property>
+            <property name="tabShape">
+             <enum>QTabWidget::TabShape::Rounded</enum>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <property name="elideMode">
+             <enum>Qt::TextElideMode::ElideNone</enum>
+            </property>
+            <property name="tabsClosable">
+             <bool>false</bool>
+            </property>
+            <property name="movable">
+             <bool>false</bool>
+            </property>
+            <property name="tabBarAutoHide">
+             <bool>false</bool>
+            </property>
+            <widget class="QWidget" name="books_reading">
+             <attribute name="title">
+              <string>       Reading        </string>
+             </attribute>
+             <widget class="QScrollArea" name="scrollArea_9">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_11">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_11">
+                <property name="geometry">
+                 <rect>
+                  <x>-10</x>
+                  <y>0</y>
+                  <width>1211</width>
+                  <height>741</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="books_grid_1"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="books_want_to_read">
+             <attribute name="title">
+              <string>  Want to read  </string>
+             </attribute>
+             <widget class="QScrollArea" name="want_to_do_scrollArea_3">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_12">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_12">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1201</width>
+                  <height>741</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="books_grid_2"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="books_continue_later">
+             <attribute name="title">
+              <string>    Continue Later   </string>
+             </attribute>
+             <widget class="QScrollArea" name="scrollArea_10">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_13">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_13">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1201</width>
+                  <height>741</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="books_grid_3"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="books_dont_want_to_read">
+             <property name="styleSheet">
+              <string notr="true">QStackedWidget {
+    background-color: rgb(128, 128, 128);
+}
+</string>
+             </property>
+             <attribute name="title">
+              <string>    Dont wnat to read </string>
+             </attribute>
+             <widget class="QScrollArea" name="scrollArea_11">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_14">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_14">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1201</width>
+                  <height>751</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="books_grid_4"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="books_ended">
+             <attribute name="title">
+              <string>       Ended        </string>
+             </attribute>
+             <widget class="QScrollArea" name="scrollArea_12">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_15">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_15">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1201</width>
+                  <height>741</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="books_grid_5"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="comics_section">
+         <property name="styleSheet">
+          <string notr="true">QWidget {
+    background-color: rgb(200, 200, 200);
+}
+</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <property name="spacing">
+             <number>920</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="font">
+               <font>
+                <family>Arial Rounded MT</family>
+                <pointsize>36</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Comics</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_10">
+              <property name="toolTip">
+               <string>Add a new movie or serie</string>
+              </property>
+              <property name="statusTip">
+               <string>Add a new movie or serie</string>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="My libirary Project/data/resources.qrc">
+                <normaloff>:/icons/Icons/Add icon.png</normaloff>:/icons/Icons/Add icon.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>60</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <widget class="QTabWidget" name="movies_tab_Widget_4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="contextMenuPolicy">
+             <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LayoutDirection::LeftToRight</enum>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QTabWidget::pane {
+    border: none;
+    background: #f0f0f0;  /* light clean background */
+}
+
+QTabBar {
+    qproperty-drawBase: 0;
+    alignment: center;  /* center the tabs */
+}
+
+QTabBar::tab {
+    background: transparent;
+    color: #444;
+    padding: 10px 25px;
+    margin: 0px 5px;
+    font: 13pt &quot;Segoe UI&quot;;
+    border-bottom: 3px solid transparent;
+}
+
+QTabBar::tab:selected {
+    color: #0078d7;  /* accent blue */
+    border-bottom: 3px solid #0078d7;
+}
+
+QTabBar::tab:hover {
+    color: #005a9e;
+}
+</string>
+            </property>
+            <property name="tabPosition">
+             <enum>QTabWidget::TabPosition::North</enum>
+            </property>
+            <property name="tabShape">
+             <enum>QTabWidget::TabShape::Rounded</enum>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <property name="elideMode">
+             <enum>Qt::TextElideMode::ElideNone</enum>
+            </property>
+            <property name="tabsClosable">
+             <bool>false</bool>
+            </property>
+            <property name="movable">
+             <bool>false</bool>
+            </property>
+            <property name="tabBarAutoHide">
+             <bool>false</bool>
+            </property>
+            <widget class="QWidget" name="comics_reading">
+             <attribute name="title">
+              <string>       reading        </string>
+             </attribute>
+             <widget class="QScrollArea" name="scrollArea_13">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_16">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_16">
+                <property name="geometry">
+                 <rect>
+                  <x>-10</x>
+                  <y>0</y>
+                  <width>1211</width>
+                  <height>741</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="comics_grid_1"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="comics_want_to_read">
+             <attribute name="title">
+              <string>  Want to read  </string>
+             </attribute>
+             <widget class="QScrollArea" name="want_to_do_scrollArea_4">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_17">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_17">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1201</width>
+                  <height>741</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="comics_grid_2"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="comics_continue_later">
+             <attribute name="title">
+              <string>    countinu Later   </string>
+             </attribute>
+             <widget class="QScrollArea" name="scrollArea_14">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_18">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_18">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1201</width>
+                  <height>741</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="comics_grid_3"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="comics_dont_want_to_read">
+             <attribute name="title">
+              <string>    Dont wnat to read </string>
+             </attribute>
+             <widget class="QScrollArea" name="scrollArea_15">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_19">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_19">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1201</width>
+                  <height>751</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="comics_grid_4"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="comics_ended">
+             <attribute name="title">
+              <string>       ended        </string>
+             </attribute>
+             <widget class="QScrollArea" name="scrollArea_16">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1201</width>
+                <height>741</height>
+               </rect>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_20">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1199</width>
+                 <height>739</height>
+                </rect>
+               </property>
+               <widget class="QWidget" name="gridLayoutWidget_20">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>1201</width>
+                  <height>741</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="comics_grid_5"/>
+               </widget>
+              </widget>
+             </widget>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="setting_section">
+         <property name="styleSheet">
+          <string notr="true">QWidget {
+    background-color: rgb(200, 200, 200);
+}
+</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="font">
+             <font>
+              <family>Arial Rounded MT</family>
+              <pointsize>36</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Setting</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>home_button</tabstop>
+  <tabstop>movies_button</tabstop>
+  <tabstop>games_button</tabstop>
+  <tabstop>books_button</tabstop>
+  <tabstop>comics_button</tabstop>
+  <tabstop>setting_button</tabstop>
+ </tabstops>
+ <resources>
+  <include location="My libirary Project/data/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

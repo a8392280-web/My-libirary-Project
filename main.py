@@ -1,7 +1,7 @@
 import sys
 
 from PySide6 import QtWidgets
-from widgets.main_widget import Widget
+from app.controllers.main_widget import Widget
 
 app = QtWidgets.QApplication(sys.argv)
 
