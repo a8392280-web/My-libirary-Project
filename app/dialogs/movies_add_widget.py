@@ -155,22 +155,40 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
         try:
             # Validate and convert fields
             if imdb_rate:
-                imdb_rate = float(imdb_rate)  # This will raise ValueError if not convertible
+                try:
+                    imdb_rate_float = float(imdb_rate)
+                    if imdb_rate_float < 0 or imdb_rate_float > 10:
+                        raise ValueError("IMDB rating must be between 0 and 10")
+                except ValueError:
+                    raise ValueError("IMDB Rating must be a number (e.g., 7.5 or 8)")
             
             if user_rate:
-                user_rate = float(user_rate)  # This will raise ValueError if not convertible
-                
+                try:
+                    user_rate_float = float(user_rate)
+                    if user_rate_float < 0 or user_rate_float > 10:
+                        raise ValueError("User rating must be between 0 and 10")
+                except ValueError:
+                    raise ValueError("User Rating must be a number (e.g., 7.5 or 8)")
+                        
             if runtime:
-                runtime = int(runtime)  # This will raise ValueError if not convertible
-                
+                try:
+                    runtime_int = int(runtime.replace("min", " ")) 
+                    if runtime_int <= 0:
+                        raise ValueError("Runtime must be a positive number")
+                except ValueError:
+                    raise ValueError("Runtime must be a whole number (e.g., 120)")
+                        
             # Validate year (released) - should be 4 digits
-            if released and (len(released) != 4 or not released.isdigit()):
-                raise ValueError("Year must be 4 digits")
-                
+            if released:
+                if len(released) != 4:
+                    raise ValueError("Year must be exactly 4 digits (e.g., 2024)")
+                if not released.isdigit():
+                    raise ValueError("Year must contain only numbers (e.g., 2024)")
+                        
         except ValueError as e:
             reply = QMessageBox.critical(
-                self, "Field Error",
-                f"Invalid value in one or more fields:\n\n{str(e)}",
+                self, "Invalid Input",
+                f"Please check the following field:\n\n{str(e)}",
                 QMessageBox.Ok
             )
             return  # Stop the process if validation fails

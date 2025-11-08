@@ -2,6 +2,7 @@ from PySide6.QtCore import Qt, QSettings
 from PySide6.QtWidgets import QWidget,QMessageBox
 import random
 from py_ui.main_ui import Ui_main_widget
+from app.dialogs.movies_show_widget import ShowMovieWindow
 from app.dialogs.movies_add_widget import AddMovieWindow
 from app.controllers.list_widget import MovieListLoader
 
@@ -94,11 +95,11 @@ class Widget(QWidget):
             loader.load_from_section(section_name)
 
         # Show item info on click 
-        # for section_name, section_data in self.sections.items():
-        #     list_widget = section_data["list"]
-        #     list_widget.itemClicked.connect(
-        #     lambda item, section=section_name: self.on_item_clicked(item, section) # When Qt emits itemClicked, it passes the clicked item — that becomes item.
-        #     )
+        for section_name, section_data in self.sections.items():
+            list_widget = section_data["list"]
+            list_widget.itemClicked.connect(
+            lambda item, section=section_name: self.on_item_clicked(item, section) # When Qt emits itemClicked, it passes the clicked item — that becomes item.
+            )
 
         #-------------------------- Setup Random buttons -------------------------------
         for section_name, section_data in self.sections.items():
@@ -177,12 +178,19 @@ class Widget(QWidget):
         # self.add_window.show()
 
 
-    # def on_item_clicked(self, item,section):
-    #         # Open the movie info window for the selected item
-    #         self.selected_id = item.data(Qt.UserRole)
-    #         self.show_movie_window = ShowMovieWindow(section= section, id=self.selected_id)
-    #         self.show_movie_window.show_info() 
-    #         self.show_movie_window.exec()
+    def on_item_clicked(self, item, section):
+        # Open the movie info window for the selected item
+        movie = item.data(Qt.UserRole)  # This returns a Movie object
+        if movie and hasattr(movie, 'id'):
+            self.selected_id = movie.id  # Get the actual ID from the Movie object
+            self.show_movie_window = ShowMovieWindow(section=section, id=self.selected_id)
+            
+            # Connect the refresh signals
+            self.show_movie_window.movie_deleted.connect(self.refresh_all_sections)
+            self.show_movie_window.movie_moved.connect(self.refresh_all_sections)
+
+
+            self.show_movie_window.exec()
             
     def filter_list(self, text, list_widget):
         # Filter movies in the list based on the entered text
