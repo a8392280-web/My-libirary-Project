@@ -1,110 +1,3 @@
-# from PySide6.QtWidgets import QListWidget, QListWidgetItem
-# from app.models.movie import Movie
-# from app.utils.my_functions import link_to_image
-# from app.db.sqlite_manger import list_movies  # or your JSON loader
-# from py_ui.movie_list_widget import MovieListItemWidget
-# from PySide6.QtCore import Qt, QSettings
-
-# class MovieListLoader:
-#     """Handles loading movies into a QListWidget."""
-
-#     def __init__(self, list_widget: QListWidget):
-#         self.list_widget = list_widget
-
-#         self.settings = QSettings("MyCompany", "MyApp")
-
-#     def load_movies(self, movies: list[Movie]):
-#         """Populate the QListWidget with a list of Movie objects."""
-#         self.list_widget.clear()
-
-#         for index, movie in enumerate(movies, start=1):
-#             item_widget = MovieListItemWidget(movie, index=index)
-#             item = QListWidgetItem(self.list_widget)
-#             item.setSizeHint(item_widget.sizeHint())
-
-#             # Store movie object for later retrieval
-#             item.setData(Qt.UserRole, movie)  # Use Qt.UserRole directly
-
-#             # Disable selection if needed
-#             item.setFlags(item.flags() & ~Qt.ItemFlag.ItemIsSelectable)
-
-#             self.list_widget.addItem(item)
-#             self.list_widget.setItemWidget(item, item_widget)
-
-
-
-#     def load_from_section(self, section: str, order_by="title", descending=False):
-#         """Fetch movies from DB by section and load them."""
-
-#         sort_key = self.settings.value(f"{section}_sort_by", "title")  # default to title
-#         reverse = self.settings.value(f"{section}_sort_by_reverse", False, type=bool)
-#         descending = bool(reverse)
-
-#         movies = list_movies(section=section, order_by=sort_key, descending=descending)
-#         self.load_movies(movies)
-
-
-
-
-# from PySide6.QtWidgets import QListWidget, QListWidgetItem, QListView
-# from PySide6.QtCore import Qt, QSettings, QSize
-# from app.models.movie import Movie
-# from app.utils.my_functions import link_to_image
-# from app.db.sqlite_manger import list_movies
-# from py_ui.movie_grid_widget import MovieGridItemWidget  # Import the new grid widget
-
-# class MovieListLoader:
-#     """Handles loading movies into a QListWidget."""
-
-#     def __init__(self, list_widget: QListWidget):
-#         self.list_widget = list_widget
-#         self.settings = QSettings("MyCompany", "MyApp")
-        
-#         # Configure for grid view
-#         self.setup_grid_view()
-
-#     def setup_grid_view(self):
-#         """Configure the list widget for grid view."""
-#         self.list_widget.setViewMode(QListView.IconMode)
-#         self.list_widget.setFlow(QListView.LeftToRight)
-#         self.list_widget.setWrapping(True)
-#         self.list_widget.setResizeMode(QListView.Adjust)
-#         self.list_widget.setGridSize(QSize(170, 300))  # Match MovieGridItemWidget size
-#         self.list_widget.setSpacing(10)
-#         self.list_widget.setMovement(QListView.Static)
-
-#     def load_movies(self, movies: list[Movie]):
-#         """Populate the QListWidget with MovieGridItemWidget."""
-#         self.list_widget.clear()
-
-#         for index, movie in enumerate(movies, start=1):
-#             # Use MovieGridItemWidget instead of MovieListItemWidget
-#             item_widget = MovieGridItemWidget(movie, index=index)
-#             item = QListWidgetItem(self.list_widget)
-            
-#             # Set fixed size for grid items
-#             item.setSizeHint(QSize(170, 300))
-            
-#             # Store movie object for later retrieval
-#             item.setData(Qt.UserRole, movie)
-
-#             # Disable selection if needed
-#             item.setFlags(item.flags() & ~Qt.ItemFlag.ItemIsSelectable)
-
-#             self.list_widget.addItem(item)
-#             self.list_widget.setItemWidget(item, item_widget)
-
-#     def load_from_section(self, section: str, order_by="title", descending=False):
-#         """Fetch movies from DB by section and load them."""
-#         sort_key = self.settings.value(f"{section}_sort_by", "title")
-#         reverse = self.settings.value(f"{section}_sort_by_reverse", False, type=bool)
-#         descending = bool(reverse)
-
-#         movies = list_movies(section=section, order_by=sort_key, descending=descending)
-#         self.load_movies(movies)
-
-
-
 from PySide6.QtWidgets import QListWidget, QListWidgetItem, QListView
 from PySide6.QtCore import Qt, QSettings, QSize
 from app.models.movie import Movie
@@ -154,6 +47,9 @@ class MovieListLoader:
         # Reload current movies if we have any
         if self.current_movies:
             self.load_movies(self.current_movies)
+         # Or reload from current section if available
+        elif self.current_section:
+            self.load_from_section(self.current_section)
 
     def load_movies(self, movies: list[Movie]):
         """Populate the QListWidget with appropriate widget based on view mode."""

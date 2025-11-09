@@ -1,14 +1,27 @@
 <RCC>
   <qresource prefix="icons">
-    <file>Icons/random.png</file>
-    <file>Icons/add_photo_alternate_rounded.png</file>
-    <file>Icons/Add icon.png</file>
-    <file>Icons/books.png</file>
-    <file>Icons/comics.png</file>
-    <file>Icons/games.png</file>
+    <file>Icons/series 1.png</file>
+    <file>Icons/series.png</file>
+    <file>Icons/dice.png</file>
+    <file>Icons/plus 1.png</file>
+    <file>Icons/plus 2.png</file>
+    <file>Icons/plus.png</file>
+    <file>Icons/setting 1.png</file>
+    <file>Icons/setting.png</file>
+    <file>Icons/book 1.png</file>
+    <file>Icons/book.png</file>
+    <file>Icons/comic 1.png</file>
+    <file>Icons/comic.png</file>
+    <file>Icons/game 1.png</file>
+    <file>Icons/game.png</file>
+    <file>Icons/grid.png</file>
+    <file>Icons/home 1.png</file>
     <file>Icons/home.png</file>
-    <file>Icons/movies.png</file>
-    <file>Icons/settings.png</file>
+    <file>Icons/list 1.png</file>
+    <file>Icons/list.png</file>
+    <file>Icons/menu 2.png</file>
+    <file>Icons/movie 1.png</file>
+    <file>Icons/movie-clapper-open.png</file>
   </qresource>
   <qresource prefix="fonts"/>
   <qresource prefix="images"/>

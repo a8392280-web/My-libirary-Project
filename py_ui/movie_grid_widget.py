@@ -38,7 +38,7 @@ class MovieGridItemWidget(QWidget):
         title_label.setAlignment(Qt.AlignCenter)
         title_label.setStyleSheet("""
             QLabel {
-                color: #fff;
+                color: #000000;
                 font-size: 14px;
                 font-weight: bold;
             }

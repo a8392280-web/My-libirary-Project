@@ -1,4 +1,4 @@
-from PySide6.QtCore import Qt, QSettings
+from PySide6.QtCore import Qt, QSettings, Signal
 from PySide6.QtWidgets import QWidget,QMessageBox
 import random
 from py_ui.main_ui import Ui_main_widget
@@ -11,6 +11,9 @@ from app.controllers.list_widget import MovieListLoader
 
 
 class Widget(QWidget):
+    
+    view_mode_changed = Signal(str)
+
     def __init__(self):
         super(Widget, self).__init__() # Initialize the parent class
          
@@ -20,9 +23,20 @@ class Widget(QWidget):
         self.setWindowTitle("My Library") # set the window title
         self.settings = QSettings("MyCompany", "MyApp") # learn about it then see
 
+        # Store loaders
+        self.section_loaders = {}
 
-        
+        # Connect the signal
+        self.view_mode_changed.connect(self.on_view_mode_changed)
 
+        # Connect buttons to the signal
+        self.ui.pushButton_2.clicked.connect(lambda: self.view_mode_changed.emit("list"))
+        self.ui.pushButton.clicked.connect(lambda: self.view_mode_changed.emit("grid"))
+
+        if self.settings.value("movie_view_mode", "list"):
+            self.ui.pushButton_2.setChecked(True)
+        else:
+            self.ui.pushButton.setChecked(True)
 
         # section with its content
         self.sections = {
@@ -96,6 +110,7 @@ class Widget(QWidget):
         for section_name, section_data in self.sections.items():
             list_widget = section_data["list"]
             loader = MovieListLoader(list_widget)
+            self.section_loaders[section_name] = loader
             loader.load_from_section(section_name)
 
         # Show item info on click 
@@ -316,8 +331,10 @@ class Widget(QWidget):
 
 
 
-
-
+    def on_view_mode_changed(self, view_mode):
+        """Update view mode using stored loaders"""
+        for loader in self.section_loaders.values():
+            loader.set_view_mode(view_mode)
 
 
 
