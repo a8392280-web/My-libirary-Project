@@ -19,7 +19,11 @@ class Widget(QWidget):
 
         self.setWindowTitle("My Library") # set the window title
         self.settings = QSettings("MyCompany", "MyApp") # learn about it then see
+
+
         
+
+
         # section with its content
         self.sections = {
             "watching": {
@@ -309,9 +313,6 @@ class Widget(QWidget):
         loader = MovieListLoader(list_widget)
         loader.load_from_section(section, order_by=sort_key, descending=descending)
         
-
-
-    
 
 
 

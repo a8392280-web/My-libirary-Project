@@ -143,7 +143,7 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
 
         # Extract data
         name = name_input.text().strip()
-        runtime = time_input.text().strip()
+        runtime = time_input.text().replace("min"," ").strip()
         released = date_input.text().strip()
         imdb_rate = imdb_input.text().strip()
         plot = plot_input.text().strip()

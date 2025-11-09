@@ -1,5 +1,5 @@
-from PySide6.QtCore import Qt,QSettings
-from PySide6.QtWidgets import QListWidgetItem, QWidget, QHBoxLayout, QVBoxLayout, QLabel,QListWidget
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import  QWidget, QHBoxLayout, QVBoxLayout, QLabel,QListWidget
 from PySide6.QtGui import QPixmap
 from app.utils.my_functions import link_to_image
 import re
