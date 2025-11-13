@@ -54,7 +54,7 @@ class MovieListItemWidget(QWidget):
         
         # ------------------------------ movie title --------------------------------------
         title_label = QLabel(m.title)
-        title_label.setStyleSheet("font-weight: bold; font-size: 16px;")
+        title_label.setStyleSheet("color: #E0E6F0; font-weight: bold; font-size: 16px;")
         
         # ---------------------------- year,runtime widget -----------------------------------
         year_runtime_widget = QWidget()
@@ -110,17 +110,17 @@ class MovieListItemWidget(QWidget):
         
         # Set hover effect and border
         self.setFixedHeight(100)
-        self.setStyleSheet("""
-            MovieListItemWidget {
-                border: 1px solid #333;
-                border-radius: 4px;
-                background-color: #1a1a1a;
-            }
-            MovieListItemWidget:hover {
-                background-color: #2a2a2a;
-                border: 1px solid #555;
-            }
-        """)
+        # self.setStyleSheet("""
+        #     MovieListItemWidget {
+        #         border: 1px solid #333;
+        #         border-radius: 4px;
+        #         background-color: #1a1a1a;
+        #     }
+        #     MovieListItemWidget:hover {
+        #         background-color: #2a2a2a;
+        #         border: 1px solid #555;
+        #     }
+        # """)
 
 
     # ----------------------------------------------------------------

@@ -1,3 +1,6 @@
 json
 typing
 pathlib
+pyside6
+os
+requsts

@@ -28,47 +28,47 @@ class Widget(QWidget):
 
         # Connect the signal
         self.view_mode_changed.connect(self.on_view_mode_changed)
+        # Connect toggled signal
 
-        # Connect buttons to the signal
-        self.ui.pushButton_2.clicked.connect(lambda: self.view_mode_changed.emit("list"))
-        self.ui.pushButton.clicked.connect(lambda: self.view_mode_changed.emit("grid"))
+        self.ui.movies_view_1.toggled.connect(lambda checked: self.view_mode_changed.emit("list" if checked else "grid"))
 
-        if self.settings.value("movie_view_mode", "list"):
-            self.ui.pushButton_2.setChecked(True)
-        else:
-            self.ui.pushButton.setChecked(True)
 
         # section with its content
         self.sections = {
             "watching": {
-                "list": self.ui.watching_list,
-                "search": self.ui.watching_search,
-                "combobox": self.ui.wahtching_sort_box,
-                "random_button": self.ui.watching_random_button,
+                "list": self.ui.movies_list_1,
+                "search": self.ui.movies_search_1,
+                "combobox": self.ui.movies_sort_by_1,
+                "random_button": self.ui.movies_random_button_1,
+                "view_button" : self.ui.movies_view_1
             },
             "want_to_watch": {
-                "list": self.ui.want_to_watch_list,
-                "search": self.ui.want_to_watch_search,
-                "combobox": self.ui.want_to_watch_sort_by,
-                "random_button": self.ui.want_to_watch_random_button,
+                "list": self.ui.movies_list_2,
+                "search": self.ui.movies_search_2,
+                "combobox": self.ui.movies_sort_by_2,
+                "random_button": self.ui.movies_random_button_2,
+                "view_button" : self.ui.movies_view_2
             },
             "continue_later": {
-                "list": self.ui.continue_later_list,
-                "search": self.ui.continue_later_search,
-                "combobox" : self.ui.continue_later_sort_by,
-                "random_button": self.ui.continue_later_random_button,
+                "list": self.ui.movies_list_3,
+                "search": self.ui.movies_search_3,
+                "combobox" : self.ui.movies_sort_by_3,
+                "random_button": self.ui.movies_random_button_3,
+                "view_button" : self.ui.movies_view_3
             },
             "dont_want_to_continue": {
-                "list": self.ui.dont_want_to_continue_list,
-                "search": self.ui.dont_want_to_continue_search,
-                "combobox": self.ui.dont_want_to_continue_sort_by,
-                "random_button": self.ui.dont_want_to_continue_random_button,
+                "list": self.ui.movies_list_4,
+                "search": self.ui.movies_search_4,
+                "combobox": self.ui.movies_sort_by_4,
+                "random_button": self.ui.movies_random_button_4,
+                "view_button" : self.ui.movies_view_4
             },
             "watched": {
-                "list": self.ui.watched_list,
-                "search": self.ui.watched_search,
-                "combobox": self.ui.watched_sort_by,
-                "random_button": self.ui.watched_random_button,
+                "list": self.ui.movies_list_5,
+                "search": self.ui.movies_search_5,
+                "combobox": self.ui.movies_sort_by_5,
+                "random_button": self.ui.movies_random_button_5,
+                "view_button" : self.ui.movies_view_5
             },
             
         }
@@ -79,24 +79,27 @@ class Widget(QWidget):
 
         #---------------------------- Set up buttons and shortcuts ----------------------
 
-        self.ui.home_button.setChecked(True) # Home button is checked by default
-        self.ui.home_button.clicked.connect(self.show_home)
-        self.ui.home_button.setShortcut("0")
+        self.ui.show_home.setChecked(True) # Home button is checked by default
+        self.ui.show_home.clicked.connect(self.show_home)
+        self.ui.show_home.setShortcut("0")
     
-        self.ui.movies_button.clicked.connect(self.show_movies)
-        self.ui.movies_button.setShortcut("1")
+        self.ui.show_movies.clicked.connect(self.show_movies)
+        self.ui.show_movies.setShortcut("1")
 
-        self.ui.games_button.clicked.connect(self.show_games)
-        self.ui.games_button.setShortcut("2")
+        self.ui.show_series.clicked.connect(self.show_series)
+        self.ui.show_series.setShortcut("2")
 
-        self.ui.books_button.clicked.connect(self.show_books)
-        self.ui.books_button.setShortcut("3")
+        self.ui.show_games.clicked.connect(self.show_games)
+        self.ui.show_games.setShortcut("3")
 
-        self.ui.comics_button.clicked.connect(self.show_comics)
-        self.ui.comics_button.setShortcut("4")
+        self.ui.show_books.clicked.connect(self.show_books)
+        self.ui.show_books.setShortcut("4")
 
-        self.ui.setting_button.clicked.connect(self.show_setting)
-        self.ui.setting_button.setShortcut("5")
+        self.ui.show_comics.clicked.connect(self.show_comics)
+        self.ui.show_comics.setShortcut("5")
+
+        self.ui.show_setting.clicked.connect(self.show_setting)
+        self.ui.show_setting.setShortcut("6")
 
         self.ui.movies_add_botton.clicked.connect(self.open_add_movie_window)
         self.ui.movies_add_botton.setShortcut("+")
@@ -119,6 +122,29 @@ class Widget(QWidget):
             list_widget.itemClicked.connect(
             lambda item, section=section_name: self.on_item_clicked(item, section) # When Qt emits itemClicked, it passes the clicked item — that becomes item.
             )
+        
+        # movies search icon
+        for section_name, section_data in self.sections.items():
+            search_line = section_data["search"]
+            search_line.setHidden(True)
+
+        #---------------------------- Set up View buttons --------------------------------------
+                
+        if self.settings.value("movie_view_mode", "list") == "list":
+            for section_name, section_data in self.sections.items():
+                view = section_data["view_button"]
+                view.setChecked(True)
+        else:
+            for section_name, section_data in self.sections.items():
+                view = section_data["view_button"]
+                self.ui.movies_view_1.setChecked(False)
+
+        # Connect all view_buttons to the same slot
+        for section_name, section_data in self.sections.items():
+            view_button = section_data["view_button"]
+            view_button.toggled.connect(self.sync_view_buttons)
+
+
 
         #-------------------------- Setup Random buttons -------------------------------
         for section_name, section_data in self.sections.items():
@@ -177,14 +203,16 @@ class Widget(QWidget):
         self.ui.stacked_body_Widget.setCurrentIndex(0)
     def show_movies(self):
         self.ui.stacked_body_Widget.setCurrentIndex(1)
-    def show_games(self):
+    def show_series(self):
         self.ui.stacked_body_Widget.setCurrentIndex(2)
-    def show_books(self):
+    def show_games(self):
         self.ui.stacked_body_Widget.setCurrentIndex(3)
-    def show_comics(self):
+    def show_books(self):
         self.ui.stacked_body_Widget.setCurrentIndex(4)
-    def show_setting(self):
+    def show_comics(self):
         self.ui.stacked_body_Widget.setCurrentIndex(5)
+    def show_setting(self):
+        self.ui.stacked_body_Widget.setCurrentIndex(6)
 
     
     def open_add_movie_window(self):
@@ -336,8 +364,13 @@ class Widget(QWidget):
         for loader in self.section_loaders.values():
             loader.set_view_mode(view_mode)
 
-
-
+    # Slot to sync all buttons
+    def sync_view_buttons(self, checked):
+        """Makes sure that all view buttons are sync"""
+        for section_name, section_data in self.sections.items():
+            view_button = section_data["view_button"]
+            if view_button.isChecked() != checked:
+                view_button.setChecked(checked)
 
 
 

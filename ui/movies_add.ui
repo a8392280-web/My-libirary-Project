@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>add_widget</class>
+ <widget class="QWidget" name="add_widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>741</width>
+    <height>530</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>741</width>
+    <height>530</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>741</width>
+    <height>530</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLineEdit {
+    color: #e0e6f0; /* light gray text for dark bg */
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.05); /* slightly visible bg for input field */
+    padding: 6px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* soft light line before focus */
+    border-radius: 4px;
+}
+
+QLineEdit:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* slightly brighter on hover */
+}
+
+QLineEdit:focus {
+    outline: none;
+    border-bottom: 2px solid #5891ff; /* bright blue focus line */
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+QLabel {
+    border: 1px solid white;   /* White border */
+    border-radius: 6px;        /* Rounded corners (optional) */
+    padding: 4px;              /* Space inside */
+}
+
+QWidget { 
+	background-color: #2b3640;
+}
+
+QPushButton {
+    color: #e0e6f0; /* light text */
+    font-size: 14px;
+    background-color: #2e3a4b; /* dark gray-blue button */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: 6px 14px;
+}
+
+QPushButton:hover {
+    background-color: #3c4d63; /* lighter on hover */
+    border: 1px solid #5891ff; /* subtle blue glow */
+}
+
+QPushButton:pressed {
+    background-color: #1e2a3a; /* darker when pressed */
+    border: 1px solid #4f7de0;
+}
+
+QPushButton:disabled {
+    color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+QComboBox {
+    color: #e0e6f0; /* light text */
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.05); /* subtle transparent bg */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+QComboBox:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #5891ff; /* subtle blue border */
+}
+
+QComboBox:focus {
+    border: 1px solid #5891ff;
+    background-color: rgba(255, 255, 255, 0.12);
+    outline: none;
+}
+
+/* ▼ Dropdown arrow */
+QComboBox::drop-down {
+    border: none;
+    width: 25px;
+    background-color: transparent;
+}
+
+QComboBox::down-arrow {
+    image: url(:/icons/Icons/sort_by.png); /* replace with your icon */
+    width: 20px;
+    height: 20px;
+}
+
+/* Popup (the dropdown list) */
+QComboBox QAbstractItemView {
+    background-color: #2e3a4b; /* darker popup background */
+    color: #e0e6f0;
+    border: 1px solid #5891ff;
+    selection-background-color: #3c4d63; /* selected item background */
+    selection-color: #ffffff;
+}
+</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="api_button">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #262e39;
+    border: 1px solid #7D8082;
+    border-radius: 4px;
+    padding: 10px 20px;
+    min-height: 40px;
+    text-align: center;
+}
+
+QPushButton:hover {
+    background-color: #1a2430; /* slightly lighter on hover */
+    border-color: #ffffff;      /* highlight border */
+}
+
+QPushButton:pressed {
+    background-color: #0a1017; /* darker when pressed */
+    border-color: #ff4655;     /* red highlight */
+}
+
+/* Optional: checked state if toggle button */
+QPushButton:checked {
+    background-color: #ff4655; /* red to indicate active */
+    color: #ffffff;
+    border-color: #ffffff;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>API</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="manual_button">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #262e39;
+    border: 1px solid #7D8082;
+    border-radius: 4px;
+    padding: 10px 20px;
+    min-height: 40px;
+    text-align: center;
+}
+
+QPushButton:hover {
+    background-color: #1a2430; /* slightly lighter on hover */
+    border-color: #ffffff;      /* highlight border */
+}
+
+QPushButton:pressed {
+    background-color: #0a1017; /* darker when pressed */
+    border-color: #ff4655;     /* red highlight */
+}
+
+/* Optional: checked state if toggle button */
+QPushButton:checked {
+    background-color: #ff4655; /* red to indicate active */
+    color: #ffffff;
+    border-color: #ffffff;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Manual</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="manual_page">
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="rightMargin">
+              <number>30</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="manual_image_label">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>180</width>
+                 <height>270</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>180</width>
+                 <height>270</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="buddy">
+                <cstring></cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLineEdit" name="image_url">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Past the image URL</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="Line" name="line_2">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="manual_section_selector">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>-1</pointsize>
+                  </font>
+                 </property>
+                 <property name="autoFillBackground">
+                  <bool>false</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="editable">
+                  <bool>false</bool>
+                 </property>
+                 <property name="currentText">
+                  <string/>
+                 </property>
+                 <property name="sizeAdjustPolicy">
+                  <enum>QComboBox::SizeAdjustPolicy::AdjustToContents</enum>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>16</width>
+                   <height>10</height>
+                  </size>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Add to</string>
+                 </property>
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="labelDrawingMode">
+                  <enum>QComboBox::LabelDrawingMode::UseStyle</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <property name="spacing">
+              <number>8</number>
+             </property>
+             <item>
+              <widget class="QLineEdit" name="manual_name_input">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>Name</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="manual_time_input">
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>Runtime (min)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="manual_date_input">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>Release</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="manual_plot_input">
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>Plot</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="manual_gener_input">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>Genre  (Action-Horror)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="manual_imdb_rate_input">
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>IMDB rate</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="manual_user_rate_input">
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>User rate</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="manual_apply_button">
+             <property name="text">
+              <string>Apply</string>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="manual_cancel_button">
+             <property name="text">
+              <string>Cancel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="api_page">
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="2" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_10">
+           <item>
+            <widget class="QPushButton" name="api_apply_button">
+             <property name="text">
+              <string>Apply</string>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="api_cancel_button">
+             <property name="text">
+              <string>Cancel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <property name="rightMargin">
+              <number>50</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="api_image_label">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>180</width>
+                 <height>175</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>180</width>
+                 <height>270</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel {
+    border: 1px solid white;   /* White border */
+    border-radius: 6px;        /* Rounded corners (optional) */
+    padding: 4px;              /* Space inside */
+}
+</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="buddy">
+                <cstring></cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="api_section_selector">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                </font>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="editable">
+                <bool>false</bool>
+               </property>
+               <property name="currentText">
+                <string/>
+               </property>
+               <property name="sizeAdjustPolicy">
+                <enum>QComboBox::SizeAdjustPolicy::AdjustToContents</enum>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>16</width>
+                 <height>10</height>
+                </size>
+               </property>
+               <property name="placeholderText">
+                <string>Add to</string>
+               </property>
+               <property name="frame">
+                <bool>false</bool>
+               </property>
+               <property name="labelDrawingMode">
+                <enum>QComboBox::LabelDrawingMode::UseStyle</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <property name="spacing">
+              <number>6</number>
+             </property>
+             <property name="leftMargin">
+              <number>120</number>
+             </property>
+             <property name="topMargin">
+              <number>6</number>
+             </property>
+             <property name="bottomMargin">
+              <number>6</number>
+             </property>
+             <item>
+              <widget class="QLineEdit" name="api_name_input">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>Name</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="api_time_input">
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>Runtime (min)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="api_date_input">
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>Release</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="api_plot_input">
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>Plot</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="api_gener_input">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>Genre  (Action-Horror)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="api_imdb_rate_input">
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>IMDB rate</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="api_user_rate_input">
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>User rate</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="search_button">
+             <property name="text">
+              <string>Search</string>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="search_line">
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>Search Online</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="My libirary Project/data/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

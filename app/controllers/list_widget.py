@@ -18,7 +18,6 @@ class MovieListLoader:
         self.current_section = None  # Track current section
         
         self.setup_view_mode()
-        self.setup_shortcuts(list_widget)
 
     def setup_view_mode(self):
         """Configure the list widget based on current view mode."""
@@ -86,10 +85,3 @@ class MovieListLoader:
         movies = list_movies(section=section, order_by=sort_key, descending=descending)
         self.current_section = section  # Track current section
         self.load_movies(movies)
-
-    def setup_shortcuts(self, parent):
-        shortcut_list = QShortcut(QKeySequence("Ctrl+L"), parent)
-        shortcut_list.activated.connect(lambda: self.set_view_mode("list"))
-        
-        shortcut_grid = QShortcut(QKeySequence("Ctrl+G"), parent)
-        shortcut_grid.activated.connect(lambda: self.set_view_mode("grid"))
