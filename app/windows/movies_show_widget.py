@@ -1,10 +1,18 @@
 from PySide6.QtCore import Qt,Signal
-from PySide6.QtGui import QCursor 
+from PySide6.QtGui import QCursor, QPixmap
 from py_ui.movies_show import Ui_show
-from PySide6.QtWidgets import QDialog , QMessageBox, QComboBox
-from app.db.sqlite_manger import get_movie_by_id, update_movie, delete_movie, move_movie_section
+from PySide6.QtWidgets import QDialog , QMessageBox, QComboBox , QScrollArea,QVBoxLayout,QWidget,QLabel,QGroupBox,QHBoxLayout
+from app.db.movies_db import get_movie_by_id, update_movie, delete_movie, move_movie_section
 from app.utils.my_functions import link_to_image , get_selected_section,resize_combo_box_to_contents
-from app.utils.info_from_APIs import update_imdb_info_if_old
+from app.fetch.movies_info_fetcher import update_imdb_info_if_old
+import webbrowser
+from app.fetch.movies_info_fetcher import ArabSeedScraper
+class ClickableLabel(QLabel):
+    clicked = Signal()
+
+    def mousePressEvent(self, event):
+        self.clicked.emit()
+        super().mousePressEvent(event)
 
 
 class ShowMovieWindow(QDialog): # Inherit from QDialog for modal behavior
@@ -18,6 +26,7 @@ class ShowMovieWindow(QDialog): # Inherit from QDialog for modal behavior
         self.ui = Ui_show() # Create an instance of the UI class
         self.ui.setupUi(self) # Set up the UI
         self.setWindowTitle("Movie Details")
+
 
         self.section = section 
         self.id = id
@@ -47,6 +56,9 @@ class ShowMovieWindow(QDialog): # Inherit from QDialog for modal behavior
          
         self.ui.show_edit_cancel_button.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(0)) 
         # This would not work, because setCurrentIndex expects an argument, but the clicked signal doesn't provide one.so we use lambda.
+
+
+        self.ui.wahtch_button_2.clicked.connect(lambda: self.show_watch_page(2))
 
         #----------------------Setup combobox(move_to) ------------------------
 
@@ -101,6 +113,32 @@ class ShowMovieWindow(QDialog): # Inherit from QDialog for modal behavior
         else:
             QMessageBox.information(self, "Movie Plot", "No description available.")
 
+    def show_trailer(self, event):
+        "Show movie trailer in the browser"
+        movie = self.get_info()
+        if movie and movie.trailer:
+
+            webbrowser.open(movie.trailer)
+        else:
+            QMessageBox.information(self, "Movie trailers", "No trailer available.")
+
+    def show_watch_page(self,button):
+        "Show watch page in the browser"
+        movie = self.get_info()
+        if movie.title:
+            if button == 2:
+                scraper = ArabSeedScraper(movie.title)
+                url = scraper.watch_url
+            else:
+                url = None
+        if url and movie.trailer:
+
+            webbrowser.open(url)
+        else:
+            QMessageBox.information(self, "Movie", "No Match found.")
+
+
+
     def show_info(self):
         "Display movie info and poster in the UI"
         movie = self.get_info()
@@ -122,10 +160,14 @@ class ShowMovieWindow(QDialog): # Inherit from QDialog for modal behavior
         self.ui.show_user_rate_lable.setText(str(movie.user_rating) if movie.user_rating else "No user rating")
 
         # Setup plot label
-        self.ui.show_plot_lable.setText("Plotℹ️")
-        self.ui.show_plot_lable.setToolTip("Click to see full plot")
-        self.ui.show_plot_lable.setCursor(QCursor(Qt.PointingHandCursor))
-        self.ui.show_plot_lable.mousePressEvent = self.show_plot
+        self.ui.plot_widget.setToolTip("Click to see full plot")
+        self.ui.plot_widget.setCursor(QCursor(Qt.PointingHandCursor))
+        self.ui.plot_widget.mousePressEvent = self.show_plot
+        # Setup  trailer lable
+        self.ui.trailer_widget.setToolTip("Click to open trailer")
+        self.ui.trailer_widget.setCursor(QCursor(Qt.PointingHandCursor))
+        self.ui.trailer_widget.mousePressEvent = self.show_trailer
+
 
         # Load image
         if movie.poster_path:
@@ -134,6 +176,9 @@ class ShowMovieWindow(QDialog): # Inherit from QDialog for modal behavior
             self.ui.show_image_lable.setText("No Image Available")
             self.ui.show_image_lable.setAlignment(Qt.AlignCenter)
             self.ui.show_image_lable.setStyleSheet("color: gray;")
+
+
+
 
     def delete_current_movie(self):
         """Ask for confirmation, delete the movie, and close the window."""
@@ -279,3 +324,4 @@ class ShowMovieWindow(QDialog): # Inherit from QDialog for modal behavior
         label.setText("Loading preview...")
         label.setAlignment(Qt.AlignCenter)
         link_to_image(url, label, 180, 270)
+

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'movies_addwqcHkT.ui'
+## Form generated from reading UI file 'movies_addqRlAkz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.2
 ##
@@ -217,6 +217,26 @@ class Ui_add_widget(object):
         self.manual_page.setObjectName(u"manual_page")
         self.gridLayout = QGridLayout(self.manual_page)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer)
+
+        self.manual_apply_button = QPushButton(self.manual_page)
+        self.manual_apply_button.setObjectName(u"manual_apply_button")
+        self.manual_apply_button.setFlat(False)
+
+        self.horizontalLayout_3.addWidget(self.manual_apply_button)
+
+        self.manual_cancel_button = QPushButton(self.manual_page)
+        self.manual_cancel_button.setObjectName(u"manual_cancel_button")
+
+        self.horizontalLayout_3.addWidget(self.manual_cancel_button)
+
+
+        self.gridLayout.addLayout(self.horizontalLayout_3, 1, 0, 1, 1)
+
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.verticalLayout_3 = QVBoxLayout()
@@ -327,31 +347,17 @@ class Ui_add_widget(object):
 
         self.verticalLayout_2.addWidget(self.manual_user_rate_input)
 
+        self.manual_trailer_input = QLineEdit(self.manual_page)
+        self.manual_trailer_input.setObjectName(u"manual_trailer")
+        self.manual_trailer_input.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_2.addWidget(self.manual_trailer_input)
+
 
         self.horizontalLayout_4.addLayout(self.verticalLayout_2)
 
 
         self.gridLayout.addLayout(self.horizontalLayout_4, 0, 0, 1, 1)
-
-        self.horizontalLayout_3 = QHBoxLayout()
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_3.addItem(self.horizontalSpacer)
-
-        self.manual_apply_button = QPushButton(self.manual_page)
-        self.manual_apply_button.setObjectName(u"manual_apply_button")
-        self.manual_apply_button.setFlat(False)
-
-        self.horizontalLayout_3.addWidget(self.manual_apply_button)
-
-        self.manual_cancel_button = QPushButton(self.manual_page)
-        self.manual_cancel_button.setObjectName(u"manual_cancel_button")
-
-        self.horizontalLayout_3.addWidget(self.manual_cancel_button)
-
-
-        self.gridLayout.addLayout(self.horizontalLayout_3, 1, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.manual_page)
         self.api_page = QWidget()
@@ -465,6 +471,12 @@ class Ui_add_widget(object):
 
         self.verticalLayout_5.addWidget(self.api_user_rate_input)
 
+        self.api_trailer_input = QLineEdit(self.api_page)
+        self.api_trailer_input.setObjectName(u"api_trailer")
+        self.api_trailer_input.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_5.addWidget(self.api_trailer_input)
+
 
         self.horizontalLayout_5.addLayout(self.verticalLayout_5)
 
@@ -514,6 +526,8 @@ class Ui_add_widget(object):
         add_widget.setWindowTitle(QCoreApplication.translate("add_widget", u"Form", None))
         self.api_button.setText(QCoreApplication.translate("add_widget", u"API", None))
         self.manual_button.setText(QCoreApplication.translate("add_widget", u"Manual", None))
+        self.manual_apply_button.setText(QCoreApplication.translate("add_widget", u"Apply", None))
+        self.manual_cancel_button.setText(QCoreApplication.translate("add_widget", u"Cancel", None))
         self.manual_image_label.setText("")
         self.image_url.setPlaceholderText(QCoreApplication.translate("add_widget", u"Past the image URL", None))
         self.manual_section_selector.setCurrentText("")
@@ -528,8 +542,8 @@ class Ui_add_widget(object):
         self.manual_gener_input.setPlaceholderText(QCoreApplication.translate("add_widget", u"Genre  (Action-Horror)", None))
         self.manual_imdb_rate_input.setPlaceholderText(QCoreApplication.translate("add_widget", u"IMDB rate", None))
         self.manual_user_rate_input.setPlaceholderText(QCoreApplication.translate("add_widget", u"User rate", None))
-        self.manual_apply_button.setText(QCoreApplication.translate("add_widget", u"Apply", None))
-        self.manual_cancel_button.setText(QCoreApplication.translate("add_widget", u"Cancel", None))
+        self.manual_trailer_input.setText("")
+        self.manual_trailer_input.setPlaceholderText(QCoreApplication.translate("add_widget", u"Trailer", None))
         self.api_apply_button.setText(QCoreApplication.translate("add_widget", u"Apply", None))
         self.api_cancel_button.setText(QCoreApplication.translate("add_widget", u"Cancel", None))
         self.api_image_label.setText("")
@@ -544,6 +558,7 @@ class Ui_add_widget(object):
         self.api_gener_input.setPlaceholderText(QCoreApplication.translate("add_widget", u"Genre  (Action-Horror)", None))
         self.api_imdb_rate_input.setPlaceholderText(QCoreApplication.translate("add_widget", u"IMDB rate", None))
         self.api_user_rate_input.setPlaceholderText(QCoreApplication.translate("add_widget", u"User rate", None))
+        self.api_trailer_input.setPlaceholderText(QCoreApplication.translate("add_widget", u"Trailer", None))
         self.search_button.setText(QCoreApplication.translate("add_widget", u"Search", None))
         self.search_line.setPlaceholderText(QCoreApplication.translate("add_widget", u"Search Online", None))
     # retranslateUi

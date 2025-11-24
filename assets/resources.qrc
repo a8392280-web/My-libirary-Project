@@ -1,5 +1,14 @@
 <RCC>
   <qresource prefix="icons">
+    <file>Icons/trailer.png</file>
+    <file>Icons/download.png</file>
+    <file>Icons/watch.png</file>
+    <file>Icons/eye 1.png</file>
+    <file>Icons/eye.png</file>
+    <file>Icons/file.png</file>
+    <file>Icons/chronometer.png</file>
+    <file>Icons/imdb.png</file>
+    <file>Icons/star.png</file>
     <file>Icons/grid.png</file>
     <file>Icons/list.png</file>
     <file>Icons/search.png</file>
@@ -17,15 +26,10 @@
     <file>Icons/comic.png</file>
     <file>Icons/console 1.png</file>
     <file>Icons/console.png</file>
-    <file>Icons/dice.png</file>
-    <file>Icons/exit 1.png</file>
-    <file>Icons/exit.png</file>
     <file>Icons/film 1.png</file>
     <file>Icons/film.png</file>
-    <file>Icons/grid.png</file>
     <file>Icons/home 1.png</file>
     <file>Icons/home.png</file>
-    <file>Icons/list.png</file>
     <file>Icons/plus 1.png</file>
     <file>Icons/plus 2.png</file>
     <file>Icons/plus.png</file>

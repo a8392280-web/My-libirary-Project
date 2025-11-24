@@ -17,3 +17,4 @@ class Movie:
     imdb_id: Optional[str] = None        # IMDb ID
     last_update: Optional[str] = None    # Timestamp of last update (string or ISO format)
     section: str = "want to watch"       # # default section
+    trailer: Optional[str] = None        # Trailer URL

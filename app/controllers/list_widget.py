@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QListWidget, QListWidgetItem, QListView
 from PySide6.QtCore import Qt, QSettings, QSize
 from app.models.movie import Movie
 from app.utils.my_functions import link_to_image
-from app.db.sqlite_manger import list_movies
+from app.db.movies_db import list_movies
 from py_ui.movie_list_widget import MovieListItemWidget
 from py_ui.movie_grid_widget import MovieGridItemWidget
 from PySide6.QtGui import QShortcut, QKeySequence

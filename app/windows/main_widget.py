@@ -2,8 +2,8 @@ from PySide6.QtCore import Qt, QSettings, Signal
 from PySide6.QtWidgets import QWidget,QMessageBox
 import random
 from py_ui.main_ui import Ui_main_widget
-from app.dialogs.movies_show_widget import ShowMovieWindow
-from app.dialogs.movies_add_widget import AddMovieWindow
+from app.windows.movies_show_widget import ShowMovieWindow
+from app.windows.movies_add_widget import AddMovieWindow
 from app.controllers.list_widget import MovieListLoader
 
 # from app.dialogs.movies_show_widget import ShowMovieWindow

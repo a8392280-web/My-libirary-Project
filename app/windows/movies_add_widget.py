@@ -1,14 +1,16 @@
 # add_movie_window.py
 from PySide6.QtWidgets import QDialog, QMessageBox,QComboBox
 from py_ui.movies_add import Ui_add_widget
-from app.db.sqlite_manger import insert_movie , list_movies
+from app.db.movies_db import insert_movie , list_movies
 from app.utils.my_functions import link_to_image , get_selected_section, resize_combo_box_to_contents
-from app.utils.info_from_APIs import get_movie_info
+from PySide6.QtCore import Signal  
+from app.fetch.movies_info_fetcher import get_movie_info
 from app.models.movie import Movie
-from PySide6.QtCore import Signal  # Add this import
-class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
+
+class AddMovieWindow(QDialog): 
+
     movie_added = Signal()  # Signal emitted when a movie is successfully added
-    def __init__(self, parent=None): # Optional parent parameter
+    def __init__(self, item_type = None, parent=None): # Optional parent parameter
         super().__init__(parent) # Call the parent constructor
         self.ui = Ui_add_widget() # Create an instance of the UI class
         self.ui.setupUi(self) # Set up the UI
@@ -19,7 +21,6 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
         self.ui.api_button.setDefault(False)
         self.ui.manual_button.setAutoDefault(False)
         self.ui.manual_button.setDefault(False)
-
 
         self.ui.image_url.returnPressed.connect(self.image)  # Trigger image loading when Enter is pressed in the URL field
 
@@ -71,8 +72,7 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
             self.ui.manual_section_selector.addItem(section.replace("_"," ").capitalize())
             self.ui.api_section_selector.addItem(section.replace("_"," ").capitalize())
 
-
-                            
+ 
     def search_and_show(self):
         # Search for a movie by name and display its info
         movie_name = self.ui.search_line.text().strip()
@@ -87,16 +87,20 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
         if movie_info == "no":
             QMessageBox.information(self, "Movie Not Found", f"No results for '{movie_name}'.", QMessageBox.Ok)
             return
+        if movie_info == "not movie":
+            QMessageBox.information(self, "Movie Not Found", f"No Movie results for '{movie_name}' But there is a series.", QMessageBox.Ok)
+            return
 
         # Display movie info
         self.movie_imdb_id = movie_info.get("imdb_id", "N/A")
         
         self.ui.api_name_input.setText(movie_info.get("Name", "N/A"))
-        self.ui.api_time_input.setText(movie_info.get("Runtime", "N/A"))
+        self.ui.api_time_input.setText(str(movie_info.get("Runtime", "N/A")))
         self.ui.api_date_input.setText(movie_info.get("Released", "N/A"))
         self.ui.api_gener_input.setText("-".join(movie_info.get("Genres", [])))
         self.ui.api_imdb_rate_input.setText(movie_info.get("Rating", "N/A"))
         self.ui.api_plot_input.setText(movie_info.get("Plot", "N/A"))
+        self.ui.api_trailer_input.setText(movie_info.get("trailer", "N/A"))
         self.ui.api_plot_input.setCursorPosition(0)
 
         # Show image
@@ -104,7 +108,6 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
         link_to_image(self.api_movie_url, self.ui.api_image_label, 180, 270)
 
 
-    
     def add_manual(self):
         # Add a manually entered movie
         self.add_movie_entry("manual")
@@ -112,7 +115,6 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
     def add_api(self):
         # Add a movie fetched via the API
         self.add_movie_entry("api")
-
 
     def add_movie_entry(self, source="manual"):
         # Select the correct UI set based on source
@@ -126,6 +128,7 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
             user_input = self.ui.manual_user_rate_input
             genre_input = self.ui.manual_gener_input
             image_url = self.ui.image_url.text().strip()
+            trailer_input = self.ui.manual_trailer_input
         else:
             section_selector = self.ui.api_section_selector
             name_input = self.ui.api_name_input
@@ -136,6 +139,7 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
             user_input = self.ui.api_user_rate_input
             genre_input = self.ui.api_gener_input
             image_url = self.api_movie_url
+            trailer_input = self.ui.api_trailer_input
 
         # Validation
         if section_selector.currentIndex() == -1 or not name_input.text().strip():
@@ -150,6 +154,7 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
         user_rate = user_input.text().strip()
         genres = [g.strip() for g in genre_input.text().split("-") if g.strip()]
         section = get_selected_section(section_selector)
+        trailer = trailer_input.text().strip()
 
 
         try:
@@ -212,8 +217,6 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
                         return
                     break
 
-
-
         # Add movie
         imdb_id = getattr(self, "movie_imdb_id", None)
         new_movie = Movie(
@@ -226,7 +229,8 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
             plot=plot,
             genres=genres,
             imdb_id=getattr(self, "movie_imdb_id", None),
-            section=section
+            section=section,
+            trailer=trailer
         )
         insert_movie(new_movie)
 
@@ -236,12 +240,5 @@ class AddMovieWindow(QDialog): # Inherit from QDialog for modal behavior
         self.close()
 
 
-        
-#------------------------------- information------------------------------------
 
 
-
-# Use ["key"] → when you are sure the key exists (like internal data).
-
-# Use .get("key", default) → when reading from external data (like APIs, files, or user input).
-    # This is the safe access method. If the key doesn’t exist, it returns None (or a default value if you provide one).
